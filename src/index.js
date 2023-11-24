@@ -3,7 +3,7 @@ import { fetchBreeds, fetchCatByBreed } from "./cat-API";
 document.addEventListener('DOMContentLoaded', () => {
 	const breedSelect = document.querySelector('.breed-select');
 	const loader = document.querySelector('.loader');
-	const erorr = docuemnt.querySelector('.error');
+	const error = document.querySelector('.error');
 	const catInfo = document.querySelector('.cat-info');
 
 	loader.style.display = 'none';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	breedSelect.addEventListener('change', () => {
 		const selectedBreedId = breedSelect.value;
-		
+
 		loader.style.display = 'block';
 		catInfo.style.display = 'none';
 		error.style.display = 'none';
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				catDescription.textContent = catData[0].breeds[0].description;
 
 				const catTemperament = document.createElement('p');
-				catDescription.textContent = catData[0].breeds[0].temperament;
+				catTemperament.textContent = catData[0].breeds[0].temperament;
 
 
 				catInfo.innerHTML = '';
